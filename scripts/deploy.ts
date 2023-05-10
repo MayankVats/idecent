@@ -1,8 +1,12 @@
 import { ethers } from "hardhat";
 
 async function main() {
+  let accounts;
+
+  [...accounts] = await ethers.getSigners();
+
   const DID = await ethers.getContractFactory("DecentralizedIdentityManager");
-  const did = await DID.deploy();
+  const did = await DID.connect(accounts[1]).deploy();
 
   await did.deployed();
 

@@ -30,6 +30,27 @@ const config: HardhatUserConfig = {
         },
       ],
     },
+    goerli: {
+      url: "https://goerli.blockpi.network/v1/rpc/public",
+      accounts: [
+        {
+          privateKey: process.env.PRIVATE_KEY_ONE || "",
+          balance: "10000000000000000000",
+        },
+        {
+          privateKey: process.env.PRIVATE_KEY_TWO || "",
+          balance: "10000000000000000000",
+        },
+        {
+          privateKey: process.env.PRIVATE_KEY_THREE || "",
+          balance: "10000000000000000000",
+        },
+        {
+          privateKey: process.env.PRIVATE_KEY_FOUR || "",
+          balance: "10000000000000000000",
+        },
+      ],
+    },
   },
 };
 
